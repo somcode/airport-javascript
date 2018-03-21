@@ -9,13 +9,17 @@ describe('Airport', function() {
   });
 
   it('has no planes by default', function() {
-    console.log(airport)
     expect(airport.planes()).toEqual([]);
   });
 
   it('can clear planes for landing', function() {
-    console.log(airport)
     airport.clearForLanding(plane);
     expect(airport.planes()).toEqual([plane]);
   });
+
+  it('can clear planes for take off', function() {
+    airport.clearForTakeoff(plane);
+    expect(airport.planes()).not.toEqual(plane);
+  });
+
 });
